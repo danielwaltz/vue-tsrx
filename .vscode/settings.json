@@ -32,5 +32,8 @@
   "js/ts.preferences.importModuleSpecifier": "non-relative",
   "js/ts.tsdk.path": "node_modules/typescript/lib",
   "prettier.enable": true,
-  "prettier.prettierPath": "node_modules/prettier"
+  "prettier.prettierPath": "node_modules/prettier",
+  "tailwindCSS.includeLanguages": {
+    "ripple": "html"
+  }
 }

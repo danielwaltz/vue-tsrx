@@ -1,9 +1,9 @@
 import { fileURLToPath, URL } from "node:url";
+import tailwindcss from "@tailwindcss/vite";
 import tsrxVue from "@tsrx/vite-plugin-vue";
 import { defineConfig } from "vite";
 import vueJsxVapor from "vue-jsx-vapor/vite";
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     tsrxVue(),
@@ -11,6 +11,7 @@ export default defineConfig({
       macros: true,
       compiler: { runtimeModuleName: "vue-jsx-vapor" },
     }),
+    tailwindcss(),
   ],
   resolve: {
     alias: {

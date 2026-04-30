@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@danielwaltz/eslint-config": "^3.4.0",
+    "@tailwindcss/vite": "^4.2.4",
     "@tsconfig/node24": "^24.0.4",
     "@tsrx/eslint-plugin": "^0.3.40",
     "@tsrx/prettier-plugin": "^0.3.40",
@@ -28,9 +29,12 @@
     "@tsrx/vue": "^0.0.15",
     "@types/node": "^24.12.2",
     "@vue/tsconfig": "^0.9.1",
+    "daisyui": "^5.5.19",
     "eslint": "^10.2.1",
     "jiti": "^2.6.1",
     "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.8.0",
+    "tailwindcss": "^4.2.4",
     "typescript": "~6.0.3",
     "vite": "^8.0.10",
     "vue-jsx-vapor": "^3.2.11"

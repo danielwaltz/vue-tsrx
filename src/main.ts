@@ -1,5 +1,5 @@
 import { createVaporApp } from "vue";
 import { App } from "./App.tsrx";
-import "uno.css";
+import "@/main.css";
 
 createVaporApp(App).mount("#app");

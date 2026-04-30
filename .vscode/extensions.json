@@ -1,3 +1,7 @@
 {
-  "recommendations": ["ripple-ts.ripple-ts-vscode-plugin", "Vue.volar"]
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "ripple-ts.ripple-ts-vscode-plugin",
+    "Vue.volar"
+  ]
 }
