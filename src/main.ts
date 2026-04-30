@@ -1,4 +1,5 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createVaporApp } from "vue";
+import { App } from "./App.tsrx";
+import "uno.css";
 
-createApp(App).mount('#app')
+createVaporApp(App).mount("#app");

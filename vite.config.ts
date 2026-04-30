@@ -1,18 +1,20 @@
-import { fileURLToPath, URL } from 'node:url'
-
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
+import { fileURLToPath, URL } from "node:url";
+import tsrxVue from "@tsrx/vite-plugin-vue";
+import { defineConfig } from "vite";
+import vueJsxVapor from "vue-jsx-vapor/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
-    vueDevTools(),
+    tsrxVue(),
+    vueJsxVapor({
+      macros: true,
+      compiler: { runtimeModuleName: "vue-jsx-vapor" },
+    }),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      "@": fileURLToPath(new URL("src", import.meta.url)),
     },
   },
-})
+});

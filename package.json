@@ -1,30 +1,38 @@
 {
   "name": "vue-tsrx",
+  "type": "module",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build"
-  },
-  "dependencies": {
-    "vue": "^3.5.32"
-  },
-  "devDependencies": {
-    "@tsconfig/node24": "^24.0.4",
-    "@types/node": "^24.12.2",
-    "@vitejs/plugin-vue": "^6.0.6",
-    "@vue/tsconfig": "^0.9.1",
-    "npm-run-all2": "^8.0.4",
-    "typescript": "~6.0.0",
-    "vite": "^8.0.8",
-    "vite-plugin-vue-devtools": "^8.1.1",
-    "vue-tsc": "^3.2.6"
-  },
+  "packageManager": "pnpm@10.33.2",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "preview": "vite preview",
+    "type-check": "tsrx-tsc --noEmit"
+  },
+  "dependencies": {
+    "vue": "beta"
+  },
+  "devDependencies": {
+    "@danielwaltz/eslint-config": "^3.4.0",
+    "@tsconfig/node24": "^24.0.4",
+    "@tsrx/eslint-plugin": "^0.3.40",
+    "@tsrx/prettier-plugin": "^0.3.40",
+    "@tsrx/typescript-plugin": "^0.3.40",
+    "@tsrx/vite-plugin-vue": "^0.0.6",
+    "@tsrx/vue": "^0.0.15",
+    "@types/node": "^24.12.2",
+    "@vue/tsconfig": "^0.9.1",
+    "eslint": "^10.2.1",
+    "jiti": "^2.6.1",
+    "prettier": "^3.8.3",
+    "typescript": "~6.0.3",
+    "vite": "^8.0.10",
+    "vue-jsx-vapor": "^3.2.11"
   }
 }
