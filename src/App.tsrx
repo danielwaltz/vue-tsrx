@@ -1,3 +1,4 @@
+import { useSessionStorage } from "@vueuse/core";
 import { computed, ref } from "vue";
 
 interface Item {
@@ -47,11 +48,15 @@ component ListItem(&{ item, multiplier, onIncrement }: ListItemProps) {
 export component App() {
   const count = ref(0);
   const multiplier = ref(2);
-  const items = ref<Item[]>([]);
+  const items = useSessionStorage<Item[]>("items", []);
 
   function addToList() {
     items.value.push({ id: crypto.randomUUID(), count: count.value });
     count.value = 0;
+  }
+
+  function resetList() {
+    items.value = [];
   }
 
   <main class="flex flex-col gap-6 max-w-4xl text-lg mx-auto p-8">
@@ -75,6 +80,10 @@ export component App() {
 
       <button class="btn btn-primary" onClick={addToList}>
         {"Add to list"}
+      </button>
+
+      <button class="btn btn-error btn-soft" onClick={resetList}>
+        {"Reset list"}
       </button>
     </div>
 
