@@ -1,3 +1,4 @@
+import { useQuery } from "@pinia/colada";
 import { useSessionStorage } from "@vueuse/core";
 import { computed, ref } from "vue";
 
@@ -36,6 +37,32 @@ component ListItem(&{ item, local, multiplier, onIncrement }: ListItemProps) {
 
     <button class="btn btn-primary" onClick={onIncrement}>{"Increment"}</button>
   </li>
+}
+
+component HealthCheck() {
+  const { state } = useQuery(
+    {
+      key: ["health"],
+      query: async () => {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        return fetch("/api/health").then((res) => res.json());
+      },
+    },
+  );
+
+  <h2 class="text-2xl font-semibold">{"Health Check"}</h2>
+
+  if (state.value.status === "pending") {
+    <p>{"Loading health check..."}</p>
+  }
+
+  if (state.value.status === "success") {
+    <div class="mockup-code w-full">
+      <pre>
+        <code>{JSON.stringify(state.value.data)}</code>
+      </pre>
+    </div>
+  }
 }
 
 export component App() {
@@ -94,5 +121,7 @@ export component App() {
         {onIncrement}
       />
     }
+
+    <HealthCheck />
   </main>
 }

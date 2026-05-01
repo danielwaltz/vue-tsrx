@@ -16,6 +16,8 @@
     "type-check": "tsrx-tsc --noEmit"
   },
   "dependencies": {
+    "@pinia/colada": "^1.2.1",
+    "pinia": "^3.0.4",
     "vue": "beta"
   },
   "devDependencies": {
