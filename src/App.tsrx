@@ -8,18 +8,13 @@ interface Item {
 
 interface ListItemProps {
   item: Item;
+  local: number;
   multiplier: number;
-  onIncrement: (value: number) => void;
+  onIncrement: () => void;
 }
 
-component ListItem(&{ item, multiplier, onIncrement }: ListItemProps) {
-  const localCount = ref(item.count);
-  const multipliedItem = computed(() => localCount.value * multiplier);
-
-  function handleIncrement() {
-    localCount.value++;
-    onIncrement(localCount.value);
-  }
+component ListItem(&{ item, local, multiplier, onIncrement }: ListItemProps) {
+  const multipliedItem = computed(() => local * multiplier);
 
   <li class="flex items-center gap-4">
     <div class="stats shadow">
@@ -30,7 +25,7 @@ component ListItem(&{ item, multiplier, onIncrement }: ListItemProps) {
 
       <div class="stat place-items-center">
         <div class="stat-title">{"Inner"}</div>
-        <div class="stat-value">{localCount.value}</div>
+        <div class="stat-value">{local}</div>
       </div>
 
       <div class="stat place-items-center">
@@ -39,9 +34,7 @@ component ListItem(&{ item, multiplier, onIncrement }: ListItemProps) {
       </div>
     </div>
 
-    <button class="btn btn-primary" onClick={handleIncrement}>
-      {"Increment"}
-    </button>
+    <button class="btn btn-primary" onClick={onIncrement}>{"Increment"}</button>
   </li>
 }
 
@@ -88,15 +81,13 @@ export component App() {
     </div>
 
     for (const item of items.value; index i; key item.id) {
-      function logIncrement(value: number) {
-        console.info(`Incremented item ${item.id} to ${value}`);
+      const local = ref(item.count);
+
+      function onIncrement() {
+        local.value++;
       }
 
-      <ListItem
-        {item}
-        multiplier={multiplier.value}
-        onIncrement={logIncrement}
-      />
+      <ListItem {item} local={local.value} multiplier={multiplier.value} {onIncrement} />
     }
   </main>
 }
