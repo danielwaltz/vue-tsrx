@@ -87,7 +87,12 @@ export component App() {
         local.value++;
       }
 
-      <ListItem {item} local={local.value} multiplier={multiplier.value} {onIncrement} />
+      <ListItem
+        {item}
+        local={local.value}
+        multiplier={multiplier.value}
+        {onIncrement}
+      />
     }
   </main>
 }

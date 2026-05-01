@@ -8,6 +8,7 @@ const tsrxConfig = defineConfig({
   rules: {
     "no-dupe-args": "off",
     "no-undef": "off",
+    "unicorn/consistent-function-scoping": "off",
     "unused-imports/no-unused-imports": "off",
     "unused-imports/no-unused-vars": "off",
   },
