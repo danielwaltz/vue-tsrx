@@ -1,6 +1,7 @@
 import { fileURLToPath, URL } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
 import tsrxVue from "@tsrx/vite-plugin-vue";
+import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 import vueJsxVapor from "vue-jsx-vapor/vite";
 
@@ -12,6 +13,7 @@ export default defineConfig({
       compiler: { runtimeModuleName: "vue-jsx-vapor" },
     }),
     tailwindcss(),
+    nitro(),
   ],
   resolve: {
     alias: {
