@@ -18,7 +18,7 @@ component ListItem(&{ item, local, multiplier, onIncrement }: ListItemProps) {
   const multipliedItem = computed(() => local * multiplier);
 
   <li class="flex items-center gap-4">
-    <div class="stats shadow-md">
+    <div class="stats bg-base-200 shadow-md">
       <div class="stat place-items-center">
         <div class="stat-title">{"Raw"}</div>
         <div class="stat-value">{item.count}</div>
@@ -35,7 +35,9 @@ component ListItem(&{ item, local, multiplier, onIncrement }: ListItemProps) {
       </div>
     </div>
 
-    <button class="btn btn-primary" onClick={onIncrement}>{"Increment"}</button>
+    <button class="btn btn-primary btn-outline" onClick={onIncrement}>
+      {"Increment"}
+    </button>
   </li>
 }
 
@@ -59,7 +61,7 @@ export default component() {
 
   <p>{"This page demonstrates state management and reactive updates."}</p>
 
-  <div class="flex items-center gap-4">
+  <div class="flex flex-wrap items-center gap-4">
     <button class="btn btn-primary btn-outline" onClick={() => count.value++}>
       {"Count: "}
       {count.value}

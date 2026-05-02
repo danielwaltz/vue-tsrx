@@ -37,23 +37,30 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/health': RouteRecordInfo<
-      '/health',
-      '/health',
+    '/data': RouteRecordInfo<
+      '/data',
+      '/data',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/tasks/': RouteRecordInfo<
-      '/tasks/',
-      '/tasks',
+    '/dom': RouteRecordInfo<
+      '/dom',
+      '/dom',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/tasks/[id]': RouteRecordInfo<
-      '/tasks/[id]',
-      '/tasks/:id',
+    '/routing/': RouteRecordInfo<
+      '/routing/',
+      '/routing',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/routing/[id]': RouteRecordInfo<
+      '/routing/[id]',
+      '/routing/:id',
       { id: ParamValue<true> },
       { id: ParamValue<false> },
       | never
@@ -77,21 +84,27 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'src/pages/health.tsrx': {
+    'src/pages/data.tsrx': {
       routes:
-        | '/health'
+        | '/data'
       views:
         | never
     }
-    'src/pages/tasks/index.tsrx': {
+    'src/pages/dom.tsrx': {
       routes:
-        | '/tasks/'
+        | '/dom'
       views:
         | never
     }
-    'src/pages/tasks/[id].tsrx': {
+    'src/pages/routing/index.tsrx': {
       routes:
-        | '/tasks/[id]'
+        | '/routing/'
+      views:
+        | never
+    }
+    'src/pages/routing/[id].tsrx': {
+      routes:
+        | '/routing/[id]'
       views:
         | never
     }

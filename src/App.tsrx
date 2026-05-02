@@ -6,7 +6,7 @@ export component App() {
 
   <div class="min-h-dvh">
     <header class="bg-base-200 font-semibold shadow-sm">
-      <nav class="navbar flex max-w-4xl mx-auto">
+      <nav class="navbar flex-wrap max-w-4xl mx-auto">
         <VaporRouterLink to="/" class="btn btn-ghost text-xl">
           {"TSRX Vue"}
         </VaporRouterLink>
@@ -15,12 +15,12 @@ export component App() {
           href="https://github.com/danielwaltz/vue-tsrx"
           target="_blank"
           rel="noopener noreferrer"
-          class="btn btn-link"
+          class="btn btn-link me-auto"
         >
           {"View Source"}
         </a>
 
-        <ul class="menu menu-horizontal ms-auto gap-1">
+        <ul class="menu menu-horizontal gap-1">
           <li>
             <VaporRouterLink to="/" activeClass="bg-base-300">
               {"Home"}
@@ -28,14 +28,20 @@ export component App() {
           </li>
 
           <li>
-            <VaporRouterLink to="/tasks" activeClass="bg-base-300">
-              {"Tasks"}
+            <VaporRouterLink to="/routing" activeClass="bg-base-300">
+              {"Routing"}
             </VaporRouterLink>
           </li>
 
           <li>
-            <VaporRouterLink to="/health" activeClass="bg-base-300">
-              {"Health"}
+            <VaporRouterLink to="/dom" activeClass="bg-base-300">
+              {"DOM"}
+            </VaporRouterLink>
+          </li>
+
+          <li>
+            <VaporRouterLink to="/data" activeClass="bg-base-300">
+              {"Data"}
             </VaporRouterLink>
           </li>
         </ul>
