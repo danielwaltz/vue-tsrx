@@ -4,11 +4,11 @@ import { useSeoMeta } from "@unhead/vue";
 export default component() {
   useSeoMeta({ title: "Health" });
 
-  const { state } = useQuery(
+  const { state, asyncStatus, refetch } = useQuery(
     {
       key: ["health"],
       query: async () => {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 500));
         return fetch("/api/health").then((res) => res.json());
       },
     },
@@ -29,4 +29,12 @@ export default component() {
       </code>
     </pre>
   </div>
+
+  <button
+    disabled={asyncStatus.value === "loading"}
+    class="btn btn-primary self-start"
+    onClick={() => refetch()}
+  >
+    {"Refresh"}
+  </button>
 }

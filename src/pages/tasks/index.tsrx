@@ -19,13 +19,8 @@ export default component() {
         <p>{description}</p>
 
         <div class="card-actions justify-end">
-          <VaporRouterLink
-            to={`/tasks/${id}`}
-            class="btn btn-primary"
-            activeClass="btn-secondary"
-          >
-            {"View Details"}
-            {" →"}
+          <VaporRouterLink to={`/tasks/${id}`} class="btn btn-primary">
+            {"View Details →"}
           </VaporRouterLink>
         </div>
       </div>

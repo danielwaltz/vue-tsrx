@@ -18,7 +18,7 @@ component ListItem(&{ item, local, multiplier, onIncrement }: ListItemProps) {
   const multipliedItem = computed(() => local * multiplier);
 
   <li class="flex items-center gap-4">
-    <div class="stats shadow">
+    <div class="stats shadow-md">
       <div class="stat place-items-center">
         <div class="stat-title">{"Raw"}</div>
         <div class="stat-value">{item.count}</div>

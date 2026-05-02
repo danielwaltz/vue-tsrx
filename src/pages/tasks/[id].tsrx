@@ -11,8 +11,7 @@ export default component() {
   useSeoMeta({ title: () => task.value?.title || "Task Details" });
 
   <VaporRouterLink to="/tasks" class="btn btn-primary btn-outline self-start">
-    {"←"}
-    {" Back to Tasks"}
+    {"← Back to Tasks"}
   </VaporRouterLink>
 
   if (!task.value) {
