@@ -10,6 +10,15 @@ export component App() {
           {"TSRX Vue"}
         </VaporRouterLink>
 
+        <a
+          href="https://github.com/danielwaltz/vue-tsrx"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-sm btn-link"
+        >
+          {"View Source"}
+        </a>
+
         <ul class="menu menu-horizontal ms-auto gap-1">
           <li>
             <VaporRouterLink to="/" activeClass="bg-neutral">
