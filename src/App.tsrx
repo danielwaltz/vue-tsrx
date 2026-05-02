@@ -1,6 +1,4 @@
 import { useHead } from "@unhead/vue";
-import { useSessionStorage } from "@vueuse/core";
-import { computed, ref } from "vue";
 import { VaporRouterLink, VaporRouterView } from "vue-router";
 
 export component App() {
