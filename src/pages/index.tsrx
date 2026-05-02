@@ -82,18 +82,22 @@ export default component() {
     </button>
   </div>
 
-  for (const item of items.value; key item.id) {
-    const local = ref(item.count);
+  if (items.value.length > 0) {
+    <ul class="flex flex-col gap-4">
+      for (const item of items.value; key item.id) {
+        const local = ref(item.count);
 
-    function onIncrement() {
-      local.value++;
-    }
+        function onIncrement() {
+          local.value++;
+        }
 
-    <ListItem
-      {item}
-      local={local.value}
-      multiplier={multiplier.value}
-      {onIncrement}
-    />
+        <ListItem
+          {item}
+          local={local.value}
+          multiplier={multiplier.value}
+          {onIncrement}
+        />
+      }
+    </ul>
   }
 }
