@@ -2,7 +2,7 @@ import { useQuery } from "@pinia/colada";
 import { useSeoMeta } from "@unhead/vue";
 
 export default component() {
-  useSeoMeta({ title: "Data" });
+  useSeoMeta({ title: "Fetching" });
 
   const { state, asyncStatus, refetch } = useQuery(
     {
@@ -14,7 +14,7 @@ export default component() {
     },
   );
 
-  <h1 class="text-3xl font-semibold">{"Data"}</h1>
+  <h1 class="text-3xl font-semibold">{"Fetching"}</h1>
 
   <p>{"This page demonstrates data fetching."}</p>
 

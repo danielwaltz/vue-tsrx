@@ -8,7 +8,7 @@ export component App() {
     <header class="bg-base-200 font-semibold shadow-sm">
       <nav class="navbar flex-wrap max-w-4xl mx-auto">
         <VaporRouterLink to="/" class="btn btn-ghost text-xl">
-          {"TSRX Vue"}
+          {"Vue TSRX"}
         </VaporRouterLink>
 
         <a
@@ -40,8 +40,8 @@ export component App() {
           </li>
 
           <li>
-            <VaporRouterLink to="/data" activeClass="bg-base-300">
-              {"Data"}
+            <VaporRouterLink to="/fetching" activeClass="bg-base-300">
+              {"Fetching"}
             </VaporRouterLink>
           </li>
         </ul>

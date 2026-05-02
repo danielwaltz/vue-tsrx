@@ -37,16 +37,16 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/data': RouteRecordInfo<
-      '/data',
-      '/data',
+    '/dom': RouteRecordInfo<
+      '/dom',
+      '/dom',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/dom': RouteRecordInfo<
-      '/dom',
-      '/dom',
+    '/fetching': RouteRecordInfo<
+      '/fetching',
+      '/fetching',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -84,15 +84,15 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'src/pages/data.tsrx': {
-      routes:
-        | '/data'
-      views:
-        | never
-    }
     'src/pages/dom.tsrx': {
       routes:
         | '/dom'
+      views:
+        | never
+    }
+    'src/pages/fetching.tsrx': {
+      routes:
+        | '/fetching'
       views:
         | never
     }

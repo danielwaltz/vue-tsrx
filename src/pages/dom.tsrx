@@ -1,7 +1,7 @@
 import { useQuery } from "@pinia/colada";
 import { useSeoMeta } from "@unhead/vue";
 import { useElementSize, usePointer } from "@vueuse/core";
-import { ref } from "vue";
+import { shallowRef } from "vue";
 
 export default component() {
   useSeoMeta({ title: "DOM" });
@@ -10,7 +10,7 @@ export default component() {
 
   <p>{"This page demonstrates DOM/template ref usage."}</p>
 
-  const pointerRef = ref<HTMLElement | null>(null);
+  const pointerRef = shallowRef<HTMLElement | null>(null);
 
   const { x, y } = usePointer({ target: pointerRef });
 
@@ -18,7 +18,7 @@ export default component() {
     {`Pointer position: (${x.value}, ${y.value})`}
   </div>
 
-  const elementSizeRef = ref<HTMLElement | null>(null);
+  const elementSizeRef = shallowRef<HTMLElement | null>(null);
 
   const { width, height } = useElementSize(elementSizeRef);
 
