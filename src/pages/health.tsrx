@@ -1,6 +1,9 @@
 import { useQuery } from "@pinia/colada";
+import { useSeoMeta } from "@unhead/vue";
 
 export default component() {
+  useSeoMeta({ title: "Health" });
+
   const { state } = useQuery(
     {
       key: ["health"],

@@ -1,3 +1,4 @@
+import { useSeoMeta } from "@unhead/vue";
 import { useSessionStorage } from "@vueuse/core";
 import { computed, ref } from "vue";
 
@@ -39,6 +40,8 @@ component ListItem(&{ item, local, multiplier, onIncrement }: ListItemProps) {
 }
 
 export default component() {
+  useSeoMeta({ title: "Home" });
+
   const count = ref(0);
   const multiplier = ref(2);
   const items = useSessionStorage<Item[]>("items", []);

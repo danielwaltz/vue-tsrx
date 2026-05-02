@@ -1,4 +1,5 @@
 import { PiniaColada } from "@pinia/colada";
+import { createHead } from "@unhead/vue/client";
 import { createPinia } from "pinia";
 import { createVaporApp } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
@@ -7,6 +8,10 @@ import { App } from "./App.tsrx";
 import "@/main.css";
 
 const app = createVaporApp(App);
+
+const head = createHead();
+
+app.use(head);
 
 const router = createRouter({
   history: createWebHistory(),
@@ -18,7 +23,10 @@ if (import.meta.hot) {
 }
 
 app.use(router);
-app.use(createPinia());
+
+const pinia = createPinia();
+
+app.use(pinia);
 app.use(PiniaColada);
 
 app.mount("#app");

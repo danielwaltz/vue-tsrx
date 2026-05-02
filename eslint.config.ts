@@ -1,8 +1,9 @@
 import { danielwaltz } from "@danielwaltz/eslint-config";
 import tsrx from "@tsrx/eslint-plugin";
+import * as unhead from "@unhead/eslint-plugin";
 import { defineConfig } from "eslint/config";
 
-const tsrxConfig = defineConfig(
+const projectConfig = defineConfig(
   {
     files: ["**/*.tsrx"],
     extends: [tsrx.configs.recommended],
@@ -17,10 +18,11 @@ const tsrxConfig = defineConfig(
   },
   {
     files: ["**/pages/**/*.tsrx"],
+    extends: [unhead.configs.recommended],
     rules: {
       "import/no-default-export": "off",
     },
   },
 );
 
-export default danielwaltz().append(tsrxConfig);
+export default danielwaltz().append(projectConfig);

@@ -1,8 +1,11 @@
+import { useHead } from "@unhead/vue";
 import { useSessionStorage } from "@vueuse/core";
 import { computed, ref } from "vue";
 import { VaporRouterLink, VaporRouterView } from "vue-router";
 
 export component App() {
+  useHead({ titleTemplate: "%s | Vue TSRX" });
+
   <div class="min-h-dvh">
     <header class="bg-base-200 font-semibold shadow-sm">
       <nav class="navbar flex max-w-4xl mx-auto">

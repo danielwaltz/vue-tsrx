@@ -1,7 +1,10 @@
+import { useSeoMeta } from "@unhead/vue";
 import { VaporRouterLink } from "vue-router";
 import { TASKS } from "@/constants";
 
 export default component() {
+  useSeoMeta({ title: "Tasks" });
+
   <h1 class="text-3xl font-semibold">{"Tasks"}</h1>
 
   <p>{"This page demonstrates dynamic routes."}</p>
