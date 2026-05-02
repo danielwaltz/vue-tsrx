@@ -11,7 +11,9 @@ export default component() {
     },
   );
 
-  <h1 class="text-3xl text-primary font-semibold">{"Health Check"}</h1>
+  <h1 class="text-3xl font-semibold">{"Health"}</h1>
+
+  <p>{"This page demonstrates data fetching."}</p>
 
   <div class="mockup-code">
     <pre>

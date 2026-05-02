@@ -2,9 +2,9 @@ import { VaporRouterLink } from "vue-router";
 import { TASKS } from "@/constants";
 
 export default component() {
-  <h1 class="text-3xl text-primary font-semibold">{"Tasks"}</h1>
+  <h1 class="text-3xl font-semibold">{"Tasks"}</h1>
 
-  <p>{"This page demonstrates how to use dynamic routes."}</p>
+  <p>{"This page demonstrates dynamic routes."}</p>
 
   for (const task of TASKS) {
     const { id, title, description } = task;

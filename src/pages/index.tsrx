@@ -52,9 +52,9 @@ export default component() {
     items.value = [];
   }
 
-  <h1 class="text-3xl text-primary font-semibold">{"Hello from TSRX Vue"}</h1>
+  <h1 class="text-3xl font-semibold">{"Home"}</h1>
 
-  <p>{"This is a Vue-compatible TSRX project."}</p>
+  <p>{"This page demonstrates state management and reactive updates."}</p>
 
   <div class="flex items-center gap-4">
     <button class="btn btn-primary btn-outline" onClick={() => count.value++}>

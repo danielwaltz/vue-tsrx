@@ -7,7 +7,7 @@ export default component() {
 
   const task = computed(() => TASKS.find((t) => t.id === route.params.id));
 
-  <VaporRouterLink to="/tasks" class="btn btn-secondary btn-outline self-start">
+  <VaporRouterLink to="/tasks" class="btn btn-primary btn-outline self-start">
     {"←"}
     {" Back to Tasks"}
   </VaporRouterLink>
@@ -17,7 +17,7 @@ export default component() {
     return;
   }
 
-  <h1 class="text-3xl text-primary font-semibold">{task.value.title}</h1>
+  <h1 class="text-3xl font-semibold">{task.value.title}</h1>
 
   <p>{task.value.description}</p>
 }
