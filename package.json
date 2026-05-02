@@ -18,7 +18,8 @@
   "dependencies": {
     "@pinia/colada": "^1.2.1",
     "pinia": "^3.0.4",
-    "vue": "beta"
+    "vue": "beta",
+    "vue-router": "https://pkg.pr.new/vue-router@2509"
   },
   "devDependencies": {
     "@danielwaltz/eslint-config": "^3.4.0",

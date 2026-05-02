@@ -8,6 +8,7 @@
     // .tsrx
     "jsxImportSource": "vue-jsx-vapor",
     "plugins": [{ "name": "@tsrx/typescript-plugin" }],
+    "moduleResolution": "bundler",
 
     // Path mapping for cleaner imports.
     "paths": {
@@ -17,6 +18,6 @@
     // Extra safety for array and object lookups, but may have false positives.
     "noUncheckedIndexedAccess": true
   },
-  "include": ["env.d.ts", "src/**/*"],
+  "include": ["env.d.ts", "typed-router.d.ts", "src/**/*"],
   "exclude": ["src/**/__tests__/*"]
 }

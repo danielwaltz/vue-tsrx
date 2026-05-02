@@ -4,9 +4,11 @@ import tsrxVue from "@tsrx/vite-plugin-vue";
 import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 import vueJsxVapor from "vue-jsx-vapor/vite";
+import vueRouter from "vue-router/vite";
 
 export default defineConfig({
   plugins: [
+    vueRouter({ extensions: [".tsrx"] }),
     tsrxVue(),
     vueJsxVapor({
       macros: true,
