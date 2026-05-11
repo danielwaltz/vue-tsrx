@@ -9,13 +9,17 @@ interface Item {
 
 interface ListItemProps {
   item: Item;
-  local: number;
   multiplier: number;
-  onIncrement: () => void;
 }
 
-component ListItem(&{ item, local, multiplier, onIncrement }: ListItemProps) {
-  const multipliedItem = computed(() => local * multiplier);
+component ListItem(&{ item, multiplier }: ListItemProps) {
+  const local = ref(item.count);
+
+  function onIncrement() {
+    local.value++;
+  }
+
+  const multipliedItem = computed(() => local.value * multiplier);
 
   <li class="flex items-center gap-4">
     <div class="stats bg-base-200 shadow-md">
@@ -26,7 +30,7 @@ component ListItem(&{ item, local, multiplier, onIncrement }: ListItemProps) {
 
       <div class="stat place-items-center">
         <div class="stat-title">{"Inner"}</div>
-        <div class="stat-value">{local}</div>
+        <div class="stat-value">{local.value}</div>
       </div>
 
       <div class="stat place-items-center">
@@ -85,18 +89,7 @@ export default component() {
   if (items.value.length > 0) {
     <ul class="flex flex-col gap-4">
       for (const item of items.value; key item.id) {
-        const local = ref(item.count);
-
-        function onIncrement() {
-          local.value++;
-        }
-
-        <ListItem
-          {item}
-          local={local.value}
-          multiplier={multiplier.value}
-          {onIncrement}
-        />
+        <ListItem {item} multiplier={multiplier.value} />
       }
     </ul>
   }
