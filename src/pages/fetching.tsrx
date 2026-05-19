@@ -4,15 +4,13 @@ import { useSeoMeta } from "@unhead/vue";
 export default component() {
   useSeoMeta({ title: "Fetching" });
 
-  const { state, asyncStatus, refetch } = useQuery(
-    {
-      key: ["health"],
-      query: async () => {
-        await new Promise((resolve) => setTimeout(resolve, 500));
-        return fetch("/api/health").then((res) => res.json());
-      },
+  const { state, asyncStatus, refetch } = useQuery({
+    key: ["health"],
+    query: async () => {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      return fetch("/api/health").then((res) => res.json());
     },
-  );
+  });
 
   <h1 class="text-3xl font-semibold">{"Fetching"}</h1>
 
