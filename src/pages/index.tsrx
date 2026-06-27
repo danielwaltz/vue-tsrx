@@ -12,7 +12,7 @@ interface ListItemProps {
   multiplier: number;
 }
 
-component ListItem(&{ item, multiplier }: ListItemProps) {
+function ListItem(&{ item, multiplier }: ListItemProps) @{
   const local = ref(item.count);
 
   function onIncrement() {
@@ -24,28 +24,28 @@ component ListItem(&{ item, multiplier }: ListItemProps) {
   <li class="flex items-center gap-4">
     <div class="stats bg-base-200 shadow-md">
       <div class="stat place-items-center">
-        <div class="stat-title">{"Raw"}</div>
+        <div class="stat-title">Raw</div>
         <div class="stat-value">{item.count}</div>
       </div>
 
       <div class="stat place-items-center">
-        <div class="stat-title">{"Inner"}</div>
+        <div class="stat-title">Inner</div>
         <div class="stat-value">{local.value}</div>
       </div>
 
       <div class="stat place-items-center">
-        <div class="stat-title">{"Multiple"}</div>
+        <div class="stat-title">Multiple</div>
         <div class="stat-value">{multipliedItem.value}</div>
       </div>
     </div>
 
     <button class="btn btn-primary btn-outline" onClick={onIncrement}>
-      {"Increment"}
+      Increment
     </button>
   </li>
 }
 
-export default component() {
+export function page() @{
   useSeoMeta({ title: "Home" });
 
   const count = ref(0);
@@ -61,36 +61,38 @@ export default component() {
     items.value = [];
   }
 
-  <h1 class="text-3xl font-semibold">{"Home"}</h1>
+  <>
+    <h1 class="text-3xl font-semibold">Home</h1>
 
-  <p>{"This page demonstrates state management and reactive updates."}</p>
+    <p>This page demonstrates state management and reactive updates.</p>
 
-  <div class="flex flex-wrap items-center gap-4">
-    <button class="btn btn-primary btn-outline" onClick={() => count.value++}>
-      {"Count: "}
-      {count.value}
-    </button>
+    <div class="flex flex-wrap items-center gap-4">
+      <button class="btn btn-primary btn-outline" onClick={() => count.value++}>
+        Count:
+        {count.value}
+      </button>
 
-    <button
-      class="btn btn-primary btn-outline"
-      onClick={() => multiplier.value++}
-    >
-      {"Multiplier: "}
-      {multiplier.value}
-    </button>
+      <button
+        class="btn btn-primary btn-outline"
+        onClick={() => multiplier.value++}
+      >
+        Multiplier:
+        {multiplier.value}
+      </button>
 
-    <button class="btn btn-primary" onClick={addToList}>{"Add to list"}</button>
+      <button class="btn btn-primary" onClick={addToList}>Add to list</button>
 
-    <button class="btn btn-error btn-soft" onClick={resetList}>
-      {"Reset list"}
-    </button>
-  </div>
+      <button class="btn btn-error btn-soft" onClick={resetList}>
+        Reset list
+      </button>
+    </div>
 
-  if (items.value.length > 0) {
-    <ul class="flex flex-col gap-4">
-      for (const item of items.value; key item.id) {
-        <ListItem {item} multiplier={multiplier.value} />
-      }
-    </ul>
-  }
+    @if (items.value.length > 0) {
+      <ul class="flex flex-col gap-4">
+        @for (const item of items.value; key item.id) {
+          <ListItem {item} multiplier={multiplier.value} />
+        }
+      </ul>
+    }
+  </>
 }

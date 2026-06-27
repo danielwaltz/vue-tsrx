@@ -1,7 +1,7 @@
 import { useQuery } from "@pinia/colada";
 import { useSeoMeta } from "@unhead/vue";
 
-export default component() {
+export function page() @{
   useSeoMeta({ title: "Fetching" });
 
   const { state, asyncStatus, refetch } = useQuery({
@@ -12,27 +12,34 @@ export default component() {
     },
   });
 
-  <h1 class="text-3xl font-semibold">{"Fetching"}</h1>
+  <>
+    <h1 class="text-3xl font-semibold">Fetching</h1>
 
-  <p>{"This page demonstrates data fetching."}</p>
+    <p>This page demonstrates data fetching.</p>
 
-  <div class="mockup-code">
-    <pre>
-      <code>
-        if (state.value.status === "pending") {
-          {"Loading health check..."}
-        } else {
-          {`Status: ${state.value.data.status} Time: ${state.value.data.timestamp}`}
-        }
-      </code>
-    </pre>
-  </div>
+    <div class="mockup-code">
+      <pre>
+        <code>
+          @if (state.value.status === "pending") {
+            <>"Loading health check...";</>
+          } @else {
+            <>
+              Status:
+              {state.value.data.status}
+              Time:
+              {state.value.data.timestamp}
+            </>
+          }
+        </code>
+      </pre>
+    </div>
 
-  <button
-    disabled={asyncStatus.value === "loading"}
-    class="btn btn-primary self-start"
-    onClick={() => refetch()}
-  >
-    {"Refresh"}
-  </button>
+    <button
+      disabled={asyncStatus.value === "loading"}
+      class="btn btn-primary self-start"
+      onClick={() => refetch()}
+    >
+      Refresh
+    </button>
+  </>
 }

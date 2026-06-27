@@ -4,7 +4,7 @@ import { createPinia } from "pinia";
 import { createVaporApp } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
 import { handleHotUpdate, routes } from "vue-router/auto-routes";
-import { App } from "./App.tsrx";
+import { App } from "@/App.tsrx";
 import "@/main.css";
 
 const app = createVaporApp(App);

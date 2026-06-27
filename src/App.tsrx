@@ -1,14 +1,14 @@
 import { useHead } from "@unhead/vue";
 import { VaporRouterLink, VaporRouterView } from "vue-router";
 
-export component App() {
+export function App() @{
   useHead({ titleTemplate: "%s | Vue TSRX" });
 
   <div class="min-h-dvh">
     <header class="bg-base-200 font-semibold shadow-sm">
       <nav class="navbar flex-wrap max-w-4xl mx-auto">
         <VaporRouterLink to="/" class="btn btn-ghost text-xl">
-          {"Vue TSRX"}
+          Vue TSRX
         </VaporRouterLink>
 
         <a
@@ -17,31 +17,31 @@ export component App() {
           rel="noopener noreferrer"
           class="btn btn-link me-auto"
         >
-          {"View Source"}
+          View Source
         </a>
 
         <ul class="menu menu-horizontal gap-1">
           <li>
             <VaporRouterLink to="/" activeClass="bg-base-300">
-              {"Home"}
+              Home
             </VaporRouterLink>
           </li>
 
           <li>
             <VaporRouterLink to="/routing" activeClass="bg-base-300">
-              {"Routing"}
+              Routing
             </VaporRouterLink>
           </li>
 
           <li>
             <VaporRouterLink to="/dom" activeClass="bg-base-300">
-              {"DOM"}
+              DOM
             </VaporRouterLink>
           </li>
 
           <li>
             <VaporRouterLink to="/fetching" activeClass="bg-base-300">
-              {"Fetching"}
+              Fetching
             </VaporRouterLink>
           </li>
         </ul>
