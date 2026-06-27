@@ -1,7 +1,10 @@
 {
   "recommendations": [
     "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
     "ripple-ts.ripple-ts-vscode-plugin",
+    "esbenp.prettier-vscode",
     "Vue.volar"
   ]
 }
